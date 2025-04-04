@@ -1,0 +1,32 @@
+\afterpage{%
+%\begin{Spacing}{1}
+\begin{table}
+\addfontfeatures{Numbers=Monospaced}
+\centering
+\begin{threeparttable}
+\caption[Results of the Tukey \textsc{hsd} test for tree cover]{Results of the Tukey \textsc{hsd} test for tree cover.}\label{tab:coverage_hsd_table}
+\noindent\begin{tabular}[l]{@{}L{0.9in}R{0.65in}R{0.65in}R{0.65in}R{0.9in}@{}}
+\toprule
+ & & \multicolumn{2}{c}{95\% Confidence Interval} & \tabularnewline
+\cmidrule(rl){3-4}
+Comparison & Estimate & Lower  & Upper & Adjusted $p$ \tabularnewline
+\midrule
+contrast  &  estimate  &  conf.low  &  conf.high  &  adj.p.value \tabularnewline
+N-E  &  -0.349  &  -0.59  &  -0.108  &  0.00419 \tabularnewline
+S-E  &  -0.0669  &  -0.254  &  0.12  &  0.644 \tabularnewline
+S-N  &  0.282  &  0.0375  &  0.527  &  0.0222 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+%\end{Spacing}
+
+\begin{figure}[p!]
+	\includegraphics[width=\textwidth]{hsd_wd_plot}
+	\caption[Tukey \textsc{hsd} 95\% confidence intervals for tree cover]{Tukey \textsc{hsd} 95\% confidence intervals for tree cover.}
+	\label{fig:hsd_coverage_plot}
+\end{figure}
+
+\clearpage
+}
+

@@ -1,0 +1,227 @@
+%!TEX TS-program = lualatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[oneside,12pt, letterpaper]{memoir}
+%\usepackage{mathptmx}
+\usepackage{semothesis}
+\usepackage{amsmath}
+
+\usepackage{graphicx}
+	\graphicspath{{figs/}}
+
+\usepackage{fontspec} 
+\setmainfont[Ligatures={Common, TeX}, BoldFont={* Bold}, ItalicFont={* Italic}, BoldItalicFont={* BoldItalic}, Numbers={Proportional}]{Linux Libertine O}
+\setsansfont[Scale=MatchLowercase,Ligatures=TeX]{Linux Biolinum O}
+\setmonofont[Scale=MatchLowercase]{Inconsolatazi4}
+
+\usepackage[protrusion=true, expansion=true]{microtype}
+%
+\usepackage{pdflscape}
+\usepackage{pdfpages}
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{threeparttable}
+%\usepackage{float}
+\usepackage{array}
+
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+% See https://tex.stackexchange.com/a/2652/39194
+% Make this part of semothesis.sty
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
+
+
+\newcolumntype{W}[1]{>{\hangindent=6pt\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+
+%%  if you can get away without the default \DoubleSpacing, then
+\setsemospacing{\OnehalfSpacing}
+
+
+%% if you use endnotes, then
+% \makepagenote
+
+%\usepackage{lipsum}
+
+%% Use them like this, and if you don?t change them you will
+ %% get unacceptable title and/or approval pages
+\settitle{Habitat Influence on Nesting Success of \textit{Lophodytes cucullatus} and \textit{Aix sponsa} (Aves: Anatidae) That Use Artificial Nest Boxes.}
+
+\setauthor{Frank Jacob Irovic}
+
+\setIDnumber{S02004278}
+
+\masters  % going for a Masters degree
+
+\emphasisarea{Biology}
+\complementaryarea{}
+
+
+\setgraddate{2025}
+
+%\setcommitteechair{Michael S.~Taylor, Ph.D.}
+%\setcommitteetwo{John S.~Scheibe, Ph.D.}
+%\setcommitteethree{Philip W.~Crawford, Ph.D.}
+%\setcommitteefour{}  % Use if you have a fourth committee member.
+
+
+% Set to \forthMembertrue if committee has 4th person.
+\fourthMemberfalse
+%\fourthMembertrue
+
+%\setdepartmentchair{James E.~Champine, Ph.D.}
+
+%\setgraduatedean{Tamela D.~Randolph, Ph.D.}
+
+
+%\hyphenation{Cteno-pharyng-o-don Hyp-oph-thalm-ichthys}
+\newcommand{\nmds}{\textsc{nmds}}
+\newcommand{\mergsci}{\textit{Lophodytes cucullatus}}
+\newcommand{\woodsci}{\textit{Aix sponsa}}
+\newcommand{\merg}{Hooded Merganser}
+\newcommand{\wood}{Wood Duck}
+
+\newcommand{\ccby}[1]{%
+	\ifx&#1&
+	{\textsc{cc by}}%
+	\else
+	{\textsc{cc by #1}}
+	\fi}
+
+
+\newcommand{\ccbysa}[1]{%
+	\ifx&#1&
+	{\textsc{cc by-sa}}%
+	\else
+	{\textsc{cc by-sa #1}} 
+	\fi}
+
+\newcommand{\ccbyncsa}[1]{%
+	\ifx&#1&
+	{\textsc{cc by-nc-sa}}%
+	\else
+	{\textsc{cc by-nc-sa #1}}
+	\fi}
+
+\newcommand{\ccbync}[1]{%
+	\ifx&#1&
+	{\textsc{cc by-nc}}%
+	\else
+	{\textsc{cc by-nc #1}}
+	\fi}
+
+\newcommand{\ccbyncnd}[1]{%
+	\ifx&#1&
+	{\textsc{cc by-nc-nd}}%
+	\else
+	{\textsc{cc by-nc-nd #1}}
+	\fi}
+
+\newcommand{\cc}{%
+	\textsc{cc0}%
+}
+
+\begin{document}
+
+\maxtocdepth{subsection} % put 3 levels into the ToC
+
+\frontmatter
+\thetitlepage
+\copyrightpage
+%\oldapprovalpage
+
+\IfFileExists{thesis-acceptance-sheet.pdf}
+{
+	\includepdf{thesis-acceptance-sheet}
+}{
+	\newgeometry{left=1in, right=1in, top=1in, bottom=0.9in}
+	\setlrmarginsandblock{1in}{1in}{*}
+	\newlength{\temptop}
+	\newlength{\tempbottom}
+	\setlength{\temptop}{\uppermargin}
+	\setlength{\tempbottom}{\lowermargin}
+	
+	\setlength{\uppermargin}{1in}
+	\setlength{\lowermargin}{0.9in}
+	\checkandfixthelayout[nearest]
+	
+	\OnehalfSpacing
+	
+	\approvalpage
+	
+	\setsemospacing{\SemoSpacing}
+	
+	\restoregeometry
+	\setlrmarginsandblock{1.5in}{1in}{*}
+	\setlength{\uppermargin}{\temptop}
+	\setlength{\lowermargin}{\tempbottom}
+	\checkandfixthelayout[nearest]
+}
+
+
+%% if you have a dedication, then it will appear here.
+\IfFileExists{dedication.tex}{%
+\semodedication
+ 	\input{dedication}
+}%Don't include if it doesn't exist.
+
+\semoacknowledgements
+	\input{acknowledgements}
+
+\OnehalfSpacing
+
+\tableofcontents*
+\listoffigures  % if you have any figures
+\listoftables   % if you have any tables
+
+\setsemospacing{\SemoSpacing}
+
+\pagestyle{semo}
+\semoabstract
+	\input{abstract}
+
+% \semodedication{ text } % if you want a dedication
+
+\mainmatter
+
+\chapter{INTRODUCTION}
+	\input{introduction}
+	
+\chapter{MATERIAL AND METHODS} % start of your main text
+	\input{material_methods}
+
+\chapter{RESULTS}
+	\input{results}
+
+\chapter{DISCUSSION}
+	\input{discussion}
+ 
+ \backmatter
+ 
+\OnehalfSpacing
+
+ \chapter{LITERATURE CITED}
+	\input{literature_cited}
+
+\SemoSpacing
+
+%% if appendices, then
+%\IfFileExists{fred.tex}{
+\semoappendix
+%\chapter{APPENDIX}
+ 	\input{appendix_a}
+%}%Don't include if it doesn't exist.
+%   ...
+%% if Biographical sketch then
+%    \begin{biosketch} ... \end{biosketch}
+\end{document}

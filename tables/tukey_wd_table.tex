@@ -1,0 +1,31 @@
+\afterpage{%
+%\begin{Spacing}{1}
+\begin{table}
+\addfontfeatures{Numbers=Monospaced}
+\centering
+\begin{threeparttable}
+\caption[Results of the Tukey \textsc{hsd} test for water depth]{Results of the Tukey \textsc{hsd} test for water depth.}\label{tab:wd_hsd_table}
+\noindent\begin{tabular}[l]{@{}L{0.9in}R{0.65in}R{0.65in}R{0.65in}R{0.9in}@{}}
+\toprule
+ & & \multicolumn{2}{c}{95\% Confidence Interval} & \tabularnewline
+\cmidrule(rl){3-4}
+Comparison & Estimate & Lower  & Upper & Adjusted $p$ \tabularnewline
+\midrule
+N-E & 1.07 & 0.152 & 1.98 & 0.02 \tabularnewline
+S-E & 0.185 & -0.729 & 1.1 & 0.87 \tabularnewline
+S-N & -0.881 & -1.8 & 0.0332 & 0.06 \tabularnewline
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+%\end{Spacing}
+
+\begin{figure}[p!]
+	\includegraphics[width=\textwidth]{hsd_wd_plot}
+	\caption[Tukey \textsc{hsd} 95\% confidence intervals for water depth]{Tukey \textsc{hsd} 95\% confidence intervals for water depth.}
+	\label{fig:hsd_wd_plot}
+\end{figure}
+
+\clearpage
+}
+
